@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 1</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+    <h1>Week01</h1>
+
+    <h2>Notes of ES6</h2>
+    <h3>Spread operator</h3>
+    <p>The spred operator expands the arrays
+        to create individuals values for the function. Example:</p>
+
+    <pre>
+        <code>
+        function myFunction() {
+            for(var i in arguments){
+              console.log(arguments[i]);
+            }
+          }
+          var params = [10, 15];
+          myFunction(5, ...params, 20, ...[25]);    // 5 10 15 20 25
+    </code>
+    </pre>
+    <p>The spread operator differs from the Rest parameters because
+        rest parameter receive parameters and return an array.
+    </p>
+    <h3>Destructuring</h3>
+    <p>It enables us to extract values from arrays and object
+        and to assign them to variables. Example:</p>
+    <pre>
+            <code>
+                let a, b, rest;
+                [a, b] = [10, 20];
+                console.log(a); // 10
+                console.log(b); // 20
+
+                [a, b, ...rest] = [10, 20, 30, 40, 50];
+                console.log(a); // 10
+                console.log(b); // 20
+                console.log(rest); // [30, 40, 50]
+            </code>
+        </pre>
+    <h3>Some exercises: How to reverse a number</h3>
+    <pre>
+    <code>
+        function reverse_a_number(n){
+	        n = n + "";
+	        return n.split("").reverse().join("");
+        }
+        console.log(reverse_a_number(32243));
+    </code>
+    </pre>
+    <h3>How can I store and get data from my web applications</h3>
+    <pre>
+        <code>
+            functionloadStory(){
+                var storyName = document.getElementById(“name_input”).value
+                var storyHTML = localStorage.getItem(storyName)
+                document.getElementById(“story_editor”).value = storyHTML
+                      }
+            functionsaveStory(){
+                var storyName = document.getElementById(“name_input”).value
+                var storyHTML = document.getElementById(“story_editor”).value
+                localStorage.setItem(storyName, storyHTML)           }
+            functiondsiplayStory(){
+                var storyHTML = document.getElementById(“story_editor”).value
+                document.getElementById(“story_display”).innerHTML = storyHTML
+            }
+        </code>
+    </pre>
+
+</body>
+
+</html>
