@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Objects</h1>
+    <h2>Object Literal</h2>
+    <p>An object literal is an object that is created directly in the language by wrapping all its properties and
+        methods in curly braces {}. <br>
+        Example: </p>
+    <pre>
+    <code>
+        const superman = {
+            name: 'Superman',
+            'real name': 'Clark Kent',
+            height: 75,
+            weight: 235,
+            hero: true,
+            villain: false,
+            allies: ['Batman','Supergirl','Superboy'],
+            fly() {
+                return 'Up, up and away!';
+            }
+        };                        
+    </code>
+    </pre>
+
+    <h3>Two ways to create an object</h3>
+    <pre>
+        <code>
+        // 1)
+        const spiderman = {};
+
+        // 2)
+        const spiderman = new Object();       
+        </code>
+    </pre>
+    <p>Important: If the property key has the same name that
+        the variable name you can use the short way.
+    </p>
+    <pre>
+    <code>
+        const name = 'Iron Man';
+        const realName = 'Tony Stark';
+        
+        // long way
+        const ironMan = ( name: name, realName: realName };
+        
+        // short ES6 way
+        const ironMan = { name, realName };                  
+    </code>
+    </pre>
+    <h3>Accessing properties</h3>
+    <pre>
+    <code>
+    // 1)
+    object.name
+
+    // 2)
+    object['name']
+    </code>
+    </pre>
+
+    <h3>Calling methods</h3>
+    <pre>
+    <code>
+    // 1)
+    object.method()
+
+    // 2)
+    object['method']()
+    </code>
+    </pre>
+
+    <h3>Display all properties of an Object</h3>
+    <pre>
+    <code>
+    for(const key in superman) {
+    console.log(key + ": " + superman[key]);
+    }
+    << "name: Superman"
+    << "real name: Clark Kent"
+    << "height: 75"
+    << "weight: 235"
+    << "hero: true"
+    << "villain: false"
+    << "allies: Batman,Supergirl,Superboy"
+    << "fly: function (){
+    console.log(\"Up, up and away!\");
+    }"                
+    </code>
+    </pre>
+
+    <h1>The DOM</h1>
+    <p>The Document Object Model, or DOM for short, represents an HTML document as a network of connected nodes that
+        form a tree-like structure.</p>
+
+    <h3>Important</h3>
+    <p>The DOM is not actually part of JavaScript because it is language agnostic (although JavaScript is, by far, the
+        language most commonly used with it). This means it can be used in any programming language, not just
+        JavaScript. We can use JavaScript to access and modify different parts of a web page using a special built-in
+        object called document.</p>
+
+    <h3>Getting An Element By Its ID</h3>
+    <pre>
+    <code>
+    const h1 = document.getElementById('title')
+    </code>
+    </pre>
+    <h3>Get Elements By Their Tag Name</h3>
+    <pre>
+    <code>
+    const listItems = document.getElementsByTagName('li');           
+    </code>
+    </pre>
+
+    <h3>Get Elements By Their Class Name</h3>
+    <pre>
+    <code>
+    const heroes = document.getElementsByClassName('hero');
+    </code>
+    </pre>
+    <h3>Query selector </h3>
+    <p>These are both very powerful methods that can emulate all the methods discussed, as well as allowing more
+        fine-grained control over which element nodes are returned.</p>
+
+    <p>Use querySelector instead getElementById</p>
+    <pre>
+    <code>
+    document.querySelector('#bats');    </code>
+    </pre>
+
+    <p>Use querySelectorAll instead getElementsByClassName</p>
+    <pre>
+    <code>
+    document.querySelectorAll('.hero')    </code>
+    </pre>
+</body>
+
+</html>
